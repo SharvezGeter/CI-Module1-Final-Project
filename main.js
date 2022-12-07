@@ -40,6 +40,7 @@ let cardGroupCharacterName2 = document.querySelector('#cardGroupName2');
 let versus = document.querySelector('#vsdiv');
 let versusMovesButton = document.querySelector('#versusMovesButton');
 let versusBackButton = document.querySelector('#versusBackButton');
+let homeBackButton = document.querySelector('#homeBackButton');
 
 
 //~~~~~~~~~~~~~~~~~~Moves card~~~~~~~~~~~~~~~~~~~
@@ -61,10 +62,11 @@ searchButton2.style.display = "none";
 cardGroup.style.display = "none";
 versusMovesButton.style.display = "none";
 versusBackButton.style.display = "none";
-
+homeBackButton.style.display = "none"
 
 
 searchButton.addEventListener('click', () => {
+ 
   //hiding the images on page
   mainPageImg.style.display = "none";
   //hiding search bar and button
@@ -228,13 +230,25 @@ searchButton.addEventListener('click', () => {
             cardGroupCharacterInfo2.innerText += `\n Speed: ${data2.stats[4].base_stat}`;
 
             versusMovesButton.style.display = "";
+            homeBackButton.style.display = ""
             userInput2.value = "";
+
+        homeBackButton.addEventListener("click", () => {
+          cardGroup.style.display = "none";
+          userInput2.style.display = "none";
+          searchButton2.style.display = "none";
+          userInput.style.display = "";
+          searchButton.style.display = "";
+          homeBackButton.style.display = "none";
+          versusMovesButton.style.display = "none";
+
+          })
             
-          versusMovesButton.addEventListener("click", () => {
+        versusMovesButton.addEventListener("click", () => {
               //resetting the character description info for character moves info 
               cardGroupCharacterInfo1.innerText = "";
-
-              versusMovesButton.style.display = "none"
+              homeBackButton.style.display = "none";
+              versusMovesButton.style.display = "none";
 
               cardGroupImg.src = data.sprites.front_shiny;
               cardGroupImg2.src = data2.sprites.front_shiny;
@@ -298,10 +312,11 @@ searchButton.addEventListener('click', () => {
               versusBackButton.style.display = "";
 
           versusBackButton.addEventListener("click", () => {
-                versusMovesButton.style.display = ""
-                versusBackButton.style.display = "none"
-                cardGroupCharacterInfo1.innerText = ""
-                cardGroupCharacterInfo2.innerText = ""
+                versusMovesButton.style.display = "";
+                versusBackButton.style.display = "none";
+                cardGroupCharacterInfo1.innerText = "";
+                cardGroupCharacterInfo2.innerText = "";
+                homeBackButton.style.display = "";
                 
                 
                 // cardGroupImg2.src = data2.sprites.other["official-artwork"].front_default;

@@ -69,9 +69,6 @@ searchButton.addEventListener('click', () => {
  
   //hiding the images on page
   mainPageImg.style.display = "none";
-  //hiding search bar and button
-  userInput.style.display = "none";
-  searchButton.style.display = "none";
 
   fetch(`https://pokeapi.co/api/v2/pokemon/${userInput.value}`)
     .then(function(response){
@@ -198,10 +195,24 @@ searchButton.addEventListener('click', () => {
           cardGroupCharacterInfo1.innerText += `\n Speed: ${data.stats[4].base_stat}`;
 
           img3.style.display = "none";
+          versusMovesButton.style.display = ""
+
+          homeBackButton.style.display = "";
+
+          homeBackButton.addEventListener("click", () => {
+            cardGroup.style.display = "none";
+            userInput2.style.display = "none";
+            searchButton2.style.display = "none";
+            userInput.style.display = "";
+            searchButton.style.display = "";
+            homeBackButton.style.display = "none";
+            versusMovesButton.style.display = "none";
+  
+            })
 
           //2nd Search Bar Event Listener
        searchButton2.addEventListener('click', () => {
-
+            //versusMovesButton.style.display = ""
             fetch(`https://pokeapi.co/api/v2/pokemon/${userInput2.value}`)
             .then(function(response2){
                   return response2.json()
@@ -245,10 +256,14 @@ searchButton.addEventListener('click', () => {
           })
             
         versusMovesButton.addEventListener("click", () => {
+         
               //resetting the character description info for character moves info 
               cardGroupCharacterInfo1.innerText = "";
               homeBackButton.style.display = "none";
               versusMovesButton.style.display = "none";
+
+              userInput2.style.display = "none"
+              searchButton2.style.display = "none"
 
               cardGroupImg.src = data.sprites.front_shiny;
               cardGroupImg2.src = data2.sprites.front_shiny;
@@ -308,6 +323,7 @@ searchButton.addEventListener('click', () => {
 
               
               characterInfo.innerText = "";
+              
 
               versusBackButton.style.display = "";
 
@@ -317,7 +333,9 @@ searchButton.addEventListener('click', () => {
                 cardGroupCharacterInfo1.innerText = "";
                 cardGroupCharacterInfo2.innerText = "";
                 homeBackButton.style.display = "";
-                
+
+                userInput2.style.display = ""
+                searchButton2.style.display = ""
                 
                 // cardGroupImg2.src = data2.sprites.other["official-artwork"].front_default;
                 cardGroupImg2.src = data2.sprites.other["official-artwork"].front_default;

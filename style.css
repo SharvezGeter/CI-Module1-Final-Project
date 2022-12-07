@@ -58,6 +58,8 @@ body {
   justify-content: center;
   border: 25px;
   text-align: center;
+  font-size:  xx-large;
+  font-weight: bolder;
   
 }
 #searchButton, #searchButton2 {
@@ -65,6 +67,7 @@ body {
   color: yellow;
   display: flex;
   justify-content: center;
+  text-align: center;
   
 }
 .card {

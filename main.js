@@ -66,7 +66,10 @@ versusBackButton.style.display = "none";
 
 searchButton.addEventListener('click', () => {
   //hiding the images on page
-  mainPageImg.style.display = "none"
+  mainPageImg.style.display = "none";
+  //hiding search bar and button
+  userInput.style.display = "none";
+  searchButton.style.display = "none";
 
   fetch(`https://pokeapi.co/api/v2/pokemon/${userInput.value}`)
     .then(function(response){
@@ -196,6 +199,7 @@ searchButton.addEventListener('click', () => {
 
           //2nd Search Bar Event Listener
        searchButton2.addEventListener('click', () => {
+
             fetch(`https://pokeapi.co/api/v2/pokemon/${userInput2.value}`)
             .then(function(response2){
                   return response2.json()
@@ -224,6 +228,7 @@ searchButton.addEventListener('click', () => {
             cardGroupCharacterInfo2.innerText += `\n Speed: ${data2.stats[4].base_stat}`;
 
             versusMovesButton.style.display = "";
+            userInput2.value = "";
             
           versusMovesButton.addEventListener("click", () => {
               //resetting the character description info for character moves info 

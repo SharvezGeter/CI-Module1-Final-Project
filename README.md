@@ -11,3 +11,7 @@ part2 - You can now search for another pokemon for a versus comparison!  A new c
 You will be able to look at both pokemon's abilities and moves!
 
 have fun in the pokedex world !!
+
+feature 1 - Search Bar
+feature 2 - Character card displays w/ description
+feature 3 - Compare cards display

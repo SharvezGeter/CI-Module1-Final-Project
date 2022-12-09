@@ -70,9 +70,7 @@ searchButton.addEventListener('click', () => {
  
   //hiding the images on page
   mainPageImg.style.display = "none";
-  //hiding search bar and button
-  // userInput.style.display = "none";
-  // searchButton.style.display = "none";
+
 
   fetch(`https://pokeapi.co/api/v2/pokemon/${userInput.value}`)
         .then(function(response){
@@ -193,8 +191,7 @@ searchButton.addEventListener('click', () => {
           userInput.style.display = "none";
           searchButton.style.display = "none";
 
-          //setting card img to user's selected character
-          // cardGroupImg.src = characterOne.sprites.versions["generation-v"]["black-white"].animated.front_default
+          //setting card img to user's selected characte
           cardGroupImg.src = characterOne.sprites.other["official-artwork"].front_default;
           //making the card visible
           
@@ -290,12 +287,12 @@ searchButton.addEventListener('click', () => {
               //resetting images
               cardGroupImg.src = characterOne.sprites.front_shiny;
               cardGroupImg2.src = characterTwo.sprites.front_shiny;
-              // resetChara1()
+
               
               cardGroupCharacterName1.innerHTML = `${characterOne.name.toUpperCase()} Moves: \n`;
               cardGroupCharacterInfo1.innerText += `\n${characterOne.moves[0].move.name.toUpperCase()} `;
-              cardGroupCharacterInfo1.innerText = characterOne.moves[0].move.name.toUpperCase() +  "\n";
-              cardGroupCharacterInfo1.innerText = characterOne.moves[0].move.name.toUpperCase() +  "\n";
+              cardGroupCharacterInfo1.innerText += characterOne.moves[0].move.name.toUpperCase() +  "\n";
+              cardGroupCharacterInfo1.innerText += characterOne.moves[0].move.name.toUpperCase() +  "\n";
               cardGroupCharacterInfo1.innerText += characterOne.moves[1].move.name.toUpperCase() + "\n";
               cardGroupCharacterInfo1.innerText += characterOne.moves[2].move.name.toUpperCase() + "\n";
               cardGroupCharacterInfo1.innerText += characterOne.moves[3].move.name.toUpperCase() + "\n";
@@ -306,7 +303,7 @@ searchButton.addEventListener('click', () => {
               cardGroupCharacterInfo1.innerText += characterOne.moves[8].move.name.toUpperCase() + "\n";
               cardGroupCharacterInfo1.innerText += characterOne.moves[9].move.name.toUpperCase() + "\n";
               cardGroupCharacterInfo1.innerText += characterOne.moves[10].move.name.toUpperCase() + "\n";
-              cardGroupCharacterInfo1.innerText += `\n${characterOne.moves[11].move.name.toUpperCase()}`;
+              cardGroupCharacterInfo1.innerText += `${characterOne.moves[11].move.name.toUpperCase()}\n`;
               cardGroupCharacterInfo1.innerText += characterOne.moves[12].move.name.toUpperCase() + "\n";
               cardGroupCharacterInfo1.innerText += characterOne.moves[13].move.name.toUpperCase() + "\n";
               cardGroupCharacterInfo1.innerText += characterOne.moves[14].move.name.toUpperCase() + "\n";
@@ -323,8 +320,7 @@ searchButton.addEventListener('click', () => {
               cardGroupCharacterInfo2.innerText = ''
               cardGroupCharacterName2.innerText = `${characterTwo.name.toUpperCase()} Moves: \n`;
               cardGroupCharacterInfo2.innerText += `\n${characterTwo.moves[0].move.name.toUpperCase()} `;
-              cardGroupCharacterInfo2.innerText = characterTwo.moves[0].move.name.toUpperCase() + "\n";
-              cardGroupCharacterInfo2.innerText = characterTwo.moves[0].move.name.toUpperCase() +  "\n";
+              cardGroupCharacterInfo2.innerText += characterTwo.moves[0].move.name.toUpperCase() + "\n";
               cardGroupCharacterInfo2.innerText += characterTwo.moves[1].move.name.toUpperCase() + "\n";
               cardGroupCharacterInfo2.innerText += characterTwo.moves[2].move.name.toUpperCase() + "\n";
               cardGroupCharacterInfo2.innerText += characterTwo.moves[3].move.name.toUpperCase() + "\n";
@@ -335,7 +331,7 @@ searchButton.addEventListener('click', () => {
               cardGroupCharacterInfo2.innerText += characterTwo.moves[8].move.name.toUpperCase() + "\n";
               cardGroupCharacterInfo2.innerText += characterTwo.moves[9].move.name.toUpperCase() + "\n";
               cardGroupCharacterInfo2.innerText += characterTwo.moves[10].move.name.toUpperCase() + "\n";
-              cardGroupCharacterInfo2.innerText += `\n${characterTwo.moves[11].move.name.toUpperCase()}`;
+              cardGroupCharacterInfo2.innerText += `${characterTwo.moves[11].move.name.toUpperCase()}\n`;
               cardGroupCharacterInfo2.innerText += characterTwo.moves[12].move.name.toUpperCase() + "\n";
               cardGroupCharacterInfo2.innerText += characterTwo.moves[13].move.name.toUpperCase() + "\n";
               cardGroupCharacterInfo2.innerText += characterTwo.moves[14].move.name.toUpperCase() + "\n";
@@ -361,10 +357,7 @@ searchButton.addEventListener('click', () => {
                 cardGroupCharacterInfo2.innerText = "";
                 homeBackButton.style.display = "";
                 
-                // userInput2.style.display = ''
-                // searchButton2.style.display = ''
-                
-                // cardGroupImg2.src = characterTwo.sprites.other["official-artwork"].front_default;
+
                 cardGroupImg2.src = characterTwo.sprites.other["official-artwork"].front_default;
                 cardGroupImg.src = characterOne.sprites.other["official-artwork"].front_default;
 
